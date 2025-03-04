@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oblivion – The Echo Phantom</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
+        
+        body {
+            background: black;
+            color: white;
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        .glitch-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(black, #1a1a1a, black);
+            animation: glitchEffect 1.5s infinite alternate;
+            z-index: -1;
+        }
+        
+        @keyframes glitchEffect {
+            0% { background-position: 0% 0%; filter: hue-rotate(0deg) blur(0px); }
+            50% { background-position: 10% 10%; filter: hue-rotate(20deg) blur(3px); }
+            100% { background-position: 0% 0%; filter: hue-rotate(0deg) blur(0px); }
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            font-size: 3.5em;
+            text-shadow: 4px 4px 15px red;
+            animation: glitch 1.5s infinite alternate;
+        }
+        
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            color: red;
+            text-shadow: 2px 2px 10px rgba(255, 0, 0, 0.8);
+        }
+        
+        .catchphrase {
+            font-style: italic;
+            font-size: 1.2em;
+            opacity: 0.8;
+            animation: flicker 2s infinite alternate;
+        }
+        
+        @keyframes glitch {
+            0% { text-shadow: 4px 4px 15px red; }
+            50% { text-shadow: -4px -4px 15px blue; }
+            100% { text-shadow: 4px 4px 15px red; }
+        }
+        
+        @keyframes flicker {
+            0% { opacity: 0.8; }
+            50% { opacity: 1; }
+            100% { opacity: 0.7; }
+        }
+        
+        .image-section img {
+            width: 100%;
+            filter: grayscale(100%) contrast(120%) drop-shadow(0px 0px 10px red);
+            transition: all 0.3s;
+        }
+        
+        .image-section img:hover {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+        
+        .quote {
+            font-size: 1.8em;
+            font-family: 'Playfair Display', serif;
+            margin-top: 20px;
+            color: white;
+            text-shadow: 2px 2px 10px red;
+            animation: fadeIn 2s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .contact form input, .contact form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background: black;
+            border: 1px solid red;
+            color: white;
+        }
+        
+        .contact button {
+            background: red;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: background 0.3s, transform 0.2s;
+        }
+        
+        .contact button:hover {
+            background: darkred;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="glitch-bg"></div>
+    <div class="container">
+        <header>
+            <h1>Oblivion – The Echo Phantom</h1>
+            <p class="catchphrase">"You can’t silence an echo."</p>
+        </header>
+        
+        <section class="overview">
+            <h2>Overview</h2>
+            <p>Oblivion, also known as the <strong>Echo Phantom</strong>, is a sinister trickster who exists in the space between sound and silence...</p>
+        </section>
+
+        <section class="about">
+            <h2>About Me</h2>
+            <p>They say I am only a whisper in the wind, a flicker in the static. I do not seek power, nor do I crave destruction. I exist to unravel the minds of those who dare to listen...</p>
+        </section>
+
+        <section class="image-section">
+            <img src=images/oblivion-logo.jpg alt="Oblivion Logo">
+        </section>
+
+        <section class="abilities">
+            <h2>Abilities & Traits</h2>
+            <ul>
+                <li><i class="fas fa-microphone-alt"></i> <strong>Auditory Manipulation:</strong> He can speak through radios, phones...</li>
+                <li><i class="fas fa-eye-slash"></i> <strong>Invisibility:</strong> He fades into mist and static...</li>
+                <li><i class="fas fa-brain"></i> <strong>Psychological Trickery:</strong> His presence creates paranoia...</li>
+            </ul>
+        </section>
+
+        <section class="quote">
+            <blockquote>"Did you hear that? …Or was it just in your head?"</blockquote>
+        </section>
+        
+        <section class="contact">
+            <h2>Contact</h2>
+            <p>Think you've heard me? Want to report an anomaly? Reach out—if you dare.</p>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </div>
+</body>
+</html>
